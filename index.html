@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RentFleet — Sewa Motor & Mobil Mudah</title>
+  <meta name="description" content="Sewa motor dan mobil harian, mingguan, bulanan. Cek ketersediaan dan pesan online dalam 2 menit.">
+  <meta name="theme-color" content="#1D4ED8">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RentFleet — Sewa Motor & Mobil Mudah">
+  <meta property="og:description" content="Cek ketersediaan armada dan pesan online dalam 2 menit.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="RentFleet">
+  <link rel="preconnect" href="https://script.google.com">
+  <link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="./css/style.css?v=1.0.0">
+  <link rel="stylesheet" href="./css/panel.css?v=1.0.0">
+  <script>try{var t=localStorage.getItem('rf_tema');if(t==='dark'&&location.hash.indexOf('#/app')===0)document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+</head>
+<body>
+  <!-- ======================= LANDING PAGE PUBLIK ======================= -->
+  <div id="landing">
+    <header class="lp-nav no-print" id="lpNav">
+      <div class="wrap">
+        <a class="brand" href="#/" aria-label="Beranda">
+          <span class="brand-logo" id="lpLogo"><i data-ic="car"></i></span>
+          <span><b data-situs="NAMA_USAHA">RentFleet</b><small data-situs="TAGLINE">Rental Motor &amp; Mobil</small></span>
+        </a>
+        <nav class="lp-menu" aria-label="Menu utama">
+          <a href="#beranda" class="on">Beranda</a><a href="#armada">Armada</a><a href="#harga">Harga</a><a href="#lokasi">Lokasi</a>
+          <a href="#cara-sewa">Cara Sewa</a><a href="#tentang">Tentang</a><a href="#kontak">Kontak</a>
+        </nav>
+        <a class="lp-telp" id="lpTelp" href="#kontak"><i data-ic="phone"></i><span data-situs-wa="NO_TELP">0812-3456-7890</span></a>
+        <a class="btn btn-primary btn-sm" href="#/masuk">Masuk</a>
+        <button class="btn btn-sec btn-ico btn-sm lp-burger" id="lpBurger" aria-label="Buka menu" aria-expanded="false"><i data-ic="menu"></i></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="beranda">
+        <div class="wrap">
+          <div>
+            <span class="eyebrow" data-situs="HERO_LABEL">Sistem rental modern &amp; terpercaya</span>
+            <h1 id="heroJudul">Jelajahi Kota.<br>Sewa Mudah,<br><em>Tanpa Ribet.</em></h1>
+            <p class="lead" data-situs="HERO_SUB">Rental mobil dan motor terpercaya dengan armada terawat, harga transparan, dan proses pemesanan instan dalam 2 menit.</p>
+            <div class="usp">
+              <div><span class="ib"><i data-ic="tag"></i></span><b>Harga Terbaik</b><span>Jaminan harga murah</span></div>
+              <div><span class="ib"><i data-ic="shield"></i></span><b>Terpercaya &amp; Aman</b><span>Unit prima &amp; terawat</span></div>
+              <div><span class="ib"><i data-ic="zap"></i></span><b>Cepat &amp; Mudah</b><span>Booking 2 menit</span></div>
+            </div>
+          </div>
+          <div class="hero-art" id="heroArt">
+            <div class="hero-chip a"><i data-ic="star" class="blue"></i><div><b id="heroRating">4.9 / 5.0</b>Rating pelanggan</div></div>
+            <div class="hero-chip b"><span class="ok"><i data-ic="check"></i></span><div><b>100% Kebersihan &amp; Sanitasi</b>Standar kenyamanan premium</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cari wrap" aria-label="Booking instan">
+        <div class="cari-box">
+          <div class="cari-h">
+            <h2><i data-ic="zap"></i> Booking Instan</h2>
+            <div class="seg" id="cariKat" role="tablist" aria-label="Kategori">
+              <button class="on" data-k="Semua" type="button">Semua</button><button data-k="Mobil" type="button">Mobil</button><button data-k="Motor" type="button">Motor</button>
+            </div>
+          </div>
+          <form class="cari-form" id="cariForm" autocomplete="off">
+            <div class="field"><label for="cLok"><i data-ic="pin" class="s"></i>Lokasi ambil</label><select class="input" id="cLok"></select></div>
+            <div class="field"><label for="cTglA"><i data-ic="calendar" class="s"></i>Tanggal ambil</label><input class="input" type="date" id="cTglA" required></div>
+            <div class="field"><label for="cJamA"><i data-ic="clock" class="s"></i>Jam ambil</label><input class="input" type="time" id="cJamA" value="09:00" step="900" required></div>
+            <div class="field"><label for="cTglK"><i data-ic="calendar" class="s"></i>Tanggal kembali</label><input class="input" type="date" id="cTglK" required></div>
+            <div class="field"><label for="cJamK"><i data-ic="clock" class="s"></i>Jam kembali</label><input class="input" type="time" id="cJamK" value="09:00" step="900" required></div>
+            <button class="btn btn-accent btn-lg" type="submit" id="cariBtn"><i data-ic="search"></i>Cari Kendaraan</button>
+          </form>
+          <div class="jaminan" id="jaminan">
+            <div><span class="ib"><i data-ic="refresh"></i></span><div><b>Pembatalan Gratis</b><span id="jBatal">Sesuai kebijakan</span></div></div>
+            <div><span class="ib"><i data-ic="dollar"></i></span><div><b>Tanpa Biaya Tersembunyi</b><span>Apa yang Anda lihat itu dibayar</span></div></div>
+            <div><span class="ib"><i data-ic="chat"></i></span><div><b>Bantuan via WA</b><span>Respon cepat &amp; ramah</span></div></div>
+            <div><span class="ib"><i data-ic="star"></i></span><div><b id="jRating">4.9/5</b><span id="jUlasan">dari pelanggan puas</span></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec" id="hasilCari" hidden>
+        <div class="wrap">
+          <div class="armada-list-h"><h3 id="hasilJudul">Hasil pencarian</h3><button class="btn btn-ghost btn-sm" id="hasilTutup" type="button">Tutup hasil</button></div>
+          <div class="unit-grid" id="hasilGrid"></div>
+        </div>
+      </section>
+
+      <section class="sec" id="armada">
+        <div class="wrap armada">
+          <div class="armada-intro">
+            <span class="sec-h" style="text-align:left;margin:0"><span class="kicker">Armada pilihan</span></span>
+            <h2>Lebih Banyak Jalan, <em>Lebih Hemat.</em></h2>
+            <p class="muted" style="margin-top:12px" data-situs="TENTANG"></p>
+            <div class="promo" id="promo">
+              <i data-ic="tag"></i>
+              <div><b data-situs="PROMO_JUDUL">Janji Harga Murah</b><p class="small muted" data-situs="PROMO_TEKS"></p><img id="promoBanner" alt="" hidden loading="lazy"></div>
+            </div>
+            <p class="small muted" style="margin-top:16px"><a href="#armada" id="lihatSemua">Jelajahi seluruh katalog armada →</a></p>
+          </div>
+          <div>
+            <div class="armada-list-h">
+              <h3>Armada Populer</h3>
+              <div class="seg" id="filterKat"><button class="on" data-k="Semua" type="button">Semua</button><button data-k="Mobil" type="button">Mobil</button><button data-k="Motor" type="button">Motor</button></div>
+            </div>
+            <div class="unit-grid" id="unitGrid">
+              <div class="ucard"><div class="foto skel"></div><div class="skel" style="height:16px;width:70%"></div><div class="skel" style="height:12px;width:50%"></div></div>
+              <div class="ucard"><div class="foto skel"></div><div class="skel" style="height:16px;width:70%"></div><div class="skel" style="height:12px;width:50%"></div></div>
+              <div class="ucard"><div class="foto skel"></div><div class="skel" style="height:16px;width:70%"></div><div class="skel" style="height:12px;width:50%"></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="harga">
+        <div class="wrap">
+          <div class="sec-h"><span class="kicker">Tarif transparan</span><h2>Paket Sederhana. <em>Harga Transparan.</em></h2><p>Pilih paket yang sesuai kebutuhan perjalanan Anda. Biaya tambahan paket dihitung per hari.</p></div>
+          <div class="paket-grid" id="paketGrid"></div>
+        </div>
+      </section>
+
+      <section class="sec" id="cara-sewa">
+        <div class="wrap">
+          <div class="sec-h"><span class="kicker">Cara sewa</span><h2>Menyewa Semudah <em>1-2-3</em></h2><p>Tidak perlu antre lama. Seluruh alur reservasi tercatat digital dan bisa dicek kapan saja.</p></div>
+          <div class="langkah">
+            <div class="lcard"><span class="bul"><i data-ic="search" class="l"></i><b>1</b></span><h4>Cari &amp; Tentukan Jadwal</h4><p>Pilih tanggal, jam, dan kategori. Sistem hanya menampilkan unit yang benar-benar kosong.</p></div>
+            <div class="lcard"><span class="bul"><i data-ic="car" class="l"></i><b>2</b></span><h4>Pilih &amp; Konfirmasi</h4><p>Lihat estimasi harga, isi data singkat, lalu admin menghubungi Anda untuk konfirmasi.</p></div>
+            <div class="lcard"><span class="bul"><i data-ic="key" class="l"></i><b>3</b></span><h4>Terima Kunci &amp; Berkendara</h4><p>Serah terima berfoto dan tercatat. Selamat menikmati perjalanan!</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec alt" id="tentang">
+        <div class="wrap">
+          <div class="sec-h"><span class="kicker">Testimoni nyata</span><h2>Dicintai Pengemudi di <em>Seluruh Kota</em></h2><p>Ulasan dari pelanggan yang telah merasakan layanan kami.</p></div>
+          <div class="testi"><div class="testi-track" id="testiTrack"></div><div class="dots" id="testiDots"></div></div>
+        </div>
+      </section>
+
+      <section class="sec" id="lokasi">
+        <div class="wrap stack" style="gap:28px">
+          <div class="bantuan" id="kontak">
+            <i class="big" data-ic="chat"></i>
+            <div><h3>Butuh rekomendasi atau sewa darurat?</h3><p>Hubungi kami lewat telepon atau WhatsApp. <span data-situs="JAM_OPERASIONAL"></span></p></div>
+            <div class="row">
+              <a class="btn btn-accent" id="btnTelp" href="#"><i data-ic="phone"></i><span data-situs-wa="NO_TELP"></span></a>
+              <a class="btn btn-sec" id="btnWa" href="#" target="_blank" rel="noopener"><i data-ic="chat"></i>Chat WhatsApp</a>
+              <button class="btn btn-sec" id="btnPasangLp" type="button" hidden><i data-ic="download"></i>Tambah ke Layar Utama</button>
+            </div>
+          </div>
+          <div>
+            <div class="sec-h"><span class="kicker">Pertanyaan umum</span><h2>FAQ</h2></div>
+            <div class="faq" id="faqList"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <a class="brand" href="#/"><span class="brand-logo"><i data-ic="car"></i></span><span><b data-situs="NAMA_USAHA">RentFleet</b><small data-situs="TAGLINE">Rental Motor &amp; Mobil</small></span></a>
+            <p style="margin-top:14px" data-situs="META_DESKRIPSI"></p>
+            <div class="sos" id="sosmed"></div>
+          </div>
+          <div><h5>Navigasi</h5><a href="#beranda">Beranda</a><a href="#armada">Daftar Armada</a><a href="#harga">Paket &amp; Tarif</a><a href="#/cek">Cek Status Booking</a><a href="#/masuk">Masuk Panel</a></div>
+          <div><h5>Informasi</h5><a href="#" data-info="SYARAT_KETENTUAN">Syarat &amp; Ketentuan</a><a href="#" data-info="KEBIJAKAN_PEMBATALAN">Kebijakan Pembatalan</a><a href="#" data-info="KEBIJAKAN_PRIVASI">Kebijakan Privasi</a><a href="#faqList">FAQ</a></div>
+          <div><h5>Lokasi kami</h5><p data-situs="ALAMAT"></p><p class="small" style="margin-top:6px" data-situs="JAM_OPERASIONAL"></p><a id="mapsLink" href="#" target="_blank" rel="noopener" hidden>Buka di Google Maps →</a>
+            <form class="news" id="newsForm"><input class="input pill" type="email" placeholder="Email untuk info promo" aria-label="Email promo" required><button class="btn btn-accent btn-sm" type="submit">Kirim</button></form>
+          </div>
+        </div>
+        <div class="bawah"><span>© <span id="tahun"></span> <span data-situs="NAMA_USAHA">RentFleet</span>. Seluruh hak dilindungi.</span><span><a href="#" data-info="KEBIJAKAN_PRIVASI">Privasi</a> · <a href="#" data-info="SYARAT_KETENTUAN">Syarat</a> · <a href="#/cek">Cek booking</a></span></div>
+      </div>
+    </footer>
+    <a class="fab-wa no-print" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Chat WhatsApp"><i data-ic="chat" class="l"></i></a>
+  </div>
+
+  <!-- ======================= HALAMAN TUNGGAL (masuk, cek, verifikasi) ======================= -->
+  <div id="solo" hidden></div>
+
+  <!-- ======================= PANEL INTERNAL ======================= -->
+  <div id="panel" hidden></div>
+
+  <div id="toasts" aria-live="polite"></div>
+
+  <noscript><p style="padding:20px">Aktifkan JavaScript untuk memakai RentFleet.</p></noscript>
+  <script src="./js/config.js?v=1.0.0"></script>
+  <script src="./js/core.js?v=1.0.0"></script>
+  <script src="./js/landing.js?v=1.0.0"></script>
+</body>
+</html>
